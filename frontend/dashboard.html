@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>WHO Data Dashboard</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background: #f4f4f9;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      color: #222;
+    }
+    h2 {
+      margin-top: 20px;
+      color: #007bff;
+    }
+    .search-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    input {
+      padding: 10px;
+      width: 300px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    button {
+      padding: 10px 15px;
+      margin-left: 5px;
+      border: none;
+      border-radius: 8px;
+      background: #007bff;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    #results {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin-top: 20px;
+    }
+    .result-item {
+      padding: 10px;
+      border-bottom: 1px solid #eee;
+    }
+    .result-item strong {
+      color: #007bff;
+    }
+    .suggestion-description {
+      display: block;
+      margin-top: 4px;
+      font-style: italic;
+      color: #666;
+      font-size: 0.9rem;
+    }
+    pre {
+      background: #f7f9fc;
+      padding: 12px;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>WHO Data Search</h1>
+
+  <div class="search-container">
+    <input type="text" id="searchBox" placeholder="Enter keyword (e.g., life expectancy, pain, fever)">
+    <button onclick="searchAll()">Search</button>
+  </div>
+
+  <div id="results">Search results will appear here...</div>
+
+  <script>
+    async function searchAll() {
+      const query = document.getElementById("searchBox").value.trim();
+      if (!query) {
+        document.getElementById("results").textContent = "Please enter a keyword.";
+        return;
+      }
+      document.getElementById("results").innerHTML = "Searching...";
+      try {
+        const res = await fetch(`/api/search-all?query=${encodeURIComponent(query)}`);
+        const data = await res.json();
+
+        let html = "";
+
+        // GHO Section
+        if (data.gho && data.gho.length > 0) {
+          html += "<h2>GHO Indicators</h2>";
+          data.gho.forEach(ind => {
+            html += `<div class="result-item">
+                       <strong>${ind.IndicatorName}</strong> (${ind.Code})
+                       <button onclick="fetchWHOData('${ind.Code}')">View Data</button>
+                     </div>`;
+          });
+        }
+
+        // ICD-11 Section
+        if (data.icd11 && data.icd11.length > 0) {
+          html += "<h2>ICD-11 / TM11 Codes</h2>";
+          data.icd11.forEach(ent => {
+            const title = ent.title.replace(/<[^>]*>/g, ''); // Clean HTML tags
+            const code = ent.id.split('/').pop(); // Get code from URI
+            html += `<div class="result-item">
+                       <strong>${title}</strong> (${code})
+                       <button onclick="viewICDDetails('${ent.id}')">View JSON</button>
+                     </div>`;
+          });
+        }
+
+        if (!html) html = "<p>No results found for your query.</p>";
+        document.getElementById("results").innerHTML = html;
+
+      } catch (err) {
+        document.getElementById("results").textContent = "Error fetching search results: " + err;
+      }
+    }
+
+    async function fetchWHOData(code) {
+      document.getElementById("results").innerHTML = "Loading GHO data for " + code + "...";
+      try {
+        const res = await fetch(`/api/who-data?query=${code}`);
+        const data = await res.json();
+        document.getElementById("results").innerHTML =
+          `<h3>Data for ${code}</h3><pre>${JSON.stringify(data, null, 2)}</pre>`;
+      } catch (err) {
+        document.getElementById("results").textContent = "Error fetching GHO data: " + err;
+      }
+    }
+
+    async function viewICDDetails(uri) {
+      document.getElementById("results").innerHTML = "Loading ICD-11 details for " + uri.split('/').pop() + "...";
+      try {
+        const res = await fetch(`/api/icd-details?uri=${encodeURIComponent(uri)}`);
+        const data = await res.json();
+        document.getElementById("results").innerHTML =
+          `<h3>Details for ${uri.split('/').pop()}</h3><pre>${JSON.stringify(data, null, 2)}</pre>`;
+      } catch (err) {
+        document.getElementById("results").textContent = "Error fetching ICD-11 details: " + err;
+      }
+    }
+  </script>
+</body>
+</html>

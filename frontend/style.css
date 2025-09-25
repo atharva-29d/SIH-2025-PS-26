@@ -1,0 +1,246 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    background: linear-gradient(135deg, #e8f1f9, #f4f9f4);
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 30px;
+}
+
+/* Main Container */
+.container {
+    width: 95%;
+    max-width: 1200px;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    animation: fadeIn 0.6s ease;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #1e88e5;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+header h1 {
+    color: #1e88e5;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+button {
+    background: linear-gradient(135deg, #1e88e5, #1565c0);
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #1565c0, #0d47a1);
+    transform: translateY(-2px);
+}
+
+/* Login Form */
+.login-container {
+    max-width: 420px;
+    margin: 50px auto;
+    padding: 40px;
+    text-align: center;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+.login-container h1 {
+    margin-bottom: 25px;
+    color: #1e88e5;
+    font-weight: 600;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.form-group select,
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    transition: border-color 0.2s ease;
+}
+
+.form-group select:focus,
+.form-group input:focus {
+    border-color: #1e88e5;
+    outline: none;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 14px;
+    border: 1px solid #e0e0e0;
+    text-align: left;
+    font-size: 15px;
+}
+
+th {
+    background: #1e88e5;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #f1f7ff;
+}
+
+/* Dashboard sections */
+.doctor-info-container,
+.patient-list-container {
+    margin-top: 35px;
+    background: #fdfdfd;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Search */
+.search-container {
+    padding: 25px;
+    background: #f9fcff;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    border: 1px solid #e3f2fd;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.04);
+}
+
+.search-container h2 {
+    margin-bottom: 10px;
+    color: #1565c0;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid #bbb;
+    transition: border-color 0.3s ease;
+}
+
+#searchInput:focus {
+    border-color: #1e88e5;
+    outline: none;
+}
+
+#resultsContainer {
+    margin-top: 18px;
+    max-height: 320px;
+    overflow-y: auto;
+}
+
+/* Result Items */
+.result-item {
+    padding: 12px 15px;
+    border: 1px solid #e0e0e0;
+    background: #fff;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.result-item:hover {
+    background: #f1f7ff;
+    transform: translateX(3px);
+}
+
+.result-item strong {
+    color: #1e88e5;
+    font-size: 16px;
+}
+
+.error {
+    color: #d32f2f;
+    font-weight: 500;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+    .container {
+        padding: 15px;
+    }
+    table th, table td {
+        font-size: 13px;
+        padding: 10px;
+    }
+}
+.json-details {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f7f9fc;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: monospace;
+    font-size: 14px;
+    white-space: pre-wrap;
+    max-height: 300px;
+    overflow-y: auto;
+}
+.suggestion-description {
+  display: block;
+  margin-top: 4px;
+  font-style: italic;
+  color: #666;
+  font-size: 0.8rem;
+}

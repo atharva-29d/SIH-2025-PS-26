@@ -1,0 +1,31 @@
+NAMASTE_Code,NAMASTE_Term,NAMASTE_Description,ICD11_TM2_Code,ICD-11 Biomedicine Code,ICD11_Term,ICD11_Description,Notes
+AAB-1,atipralApaH,"Irrelevant and irrational talk, mental confusion (Vata)",SQ00,6A25,Delusional disorder,Delusions without other psychosis,Speech/mind vitiation.
+AAB-2,anavasthitacittatvam,"Difficulty to concentrate, fickleness, confusion (Vata)",SQ05,MB23.2,Attention deficit,Difficulty maintaining focus,Mental instability.
+AAB-3,a~ggamardaH,Body ache (kEvalavAta),SP9Y,MG30.1,Generalised pain,Pain in multiple regions,General body pain.
+AAB-4,a~ggaSuShkatA,Dryness of body parts (kEvalavAta),SP9Y,NE81,Dry skin,Abnormally dry skin,Dryness from Vata.
+AAB-5,a~ggaviBraMSaH,Atony or flaccidity of joints/muscles (Vata),SP21,MB55,Flaccidity,Loss of muscle tone,Flaccidity from Vata.
+AAB-6,arditaH,Facial paralysis (kEvalavAta),SL00,8B81,Facial nerve palsy,Facial nerve dysfunction,Traditional facial paralysis.
+AAB-7,arasaj~jatA,"Loss of taste, smell, anorexia, excess saliva (Vata)",SM1P,MD42,Ageusia,Loss of taste sensation,Taste loss from Kapha/Vata.
+AAB-8,aSabdaSravaNam,Deafness (kEvalavAta),SK00,AB50,Acquired hearing impairment,Loss of hearing ability,Hearing loss from Vata.
+AAB-9,asvapnaH,Insomnia (kEvalavAta),SK00,7A00,Insomnia,Difficulty sleeping,Sleeplessness from Vata.
+AAB-10,akShiBedaH,Splitting pain in eye (kEvalavAta),SK00,MC3Y,Other specified eye pain,Pain in eye region,Eye pain mapping.
+AAB-11,akShivyudAsaH,Drooping of eyelid (kEvalavAta),SK00,9A02.0,Ptosis of eyelid,Drooping upper eyelid,Ptosis from Vata.
+AAB-12,akShiSUlaH,Eye pain (kEvalavAta),SK00,MC3Y,Other specified eye pain,Pain in eye,Duplicate symptom refinement.
+AAB-13,ATopaH,Abdominal distension with sound (kEvalavAta),SP12,ME00,Abdominal distension,Bloating or swelling,Gas-related distension.
+AAB-14,AkShepakaH,Convulsions (kEvalavAta),SK84,8A68,Convulsive disorder,Recurrent convulsions,Convulsion mapping.
+AAB-15,uccaiHSrutiH,Intolerance to loud sounds (Vata/Pitta),SK84,AB5Y,Other hearing disorders,Hypersensitivity to sound,Hyperacusis from dosha.
+AAB-16,udarAveShTaH,Wrapping pain in abdomen (kEvalavAta),SP12,MD81,Abdominal pain,Pain in abdominal region,Colicky pain.
+AAB-17,udAvartaH,Upward movement of Vata (kEvalavAta),SP12,DC90,Functional GI disorders,Gut function disorders,Functional GI issue.
+AAB-18,UrustamBaH,Stiffness in thighs (kEvalavAta),SP45,FB32,Stiffness of joint,Reduced joint mobility,Thigh stiffness.
+AAB-19,UrusAdaH,Weakness in thighs (kEvalavAta),SP97,MG22,Fatigue,Persistent tiredness,Localized fatigue.
+AAB-20,ekA~ggarogaH,Disease affecting one part of body (kEvalavAta),SP9Y,MG30.Z,"Pain, unspecified",Unspecified localized pain,One-sided affection.
+AAB-21,oShThaBedaH,Splitting of lips (kEvalavAta),SN41,DA01.7,Cracked lips,Fissuring or cracking of lips,Lip cracking from dryness.
+AAB-22,kaNThodhvaMsaH,"Harsh, husky voice, throat roughness (Vata)",SL02,MD36,Hoarseness,Abnormal voice change,Hoarseness from Vata.
+AAB-23,karNaSUlaH,Ear pain (kEvalavAta),SK91,AB71,Otalgia,Pain in the ear,Earache mapping.
+AAB-24,kampaH,Tremors (kEvalavAta),SK00,MB44.1,Tremor,Involuntary shaking,Tremors from Vata.
+AAB-25,kaShAyAsyatA,Astringent taste in mouth (kEvalavAta),SM1Y,MD90.3,Abnormal taste sensations,Dysgeusia or altered taste,Astringent mouthfeel.
+AAB-26,klamaH,Extreme exhaustion without effort (Vata),SP97,MG22,Fatigue,Exhaustion without cause,Fatigue mapping.
+AAB-27,kArShNyam,Discoloration or pigmentation of skin (Vata),SN41,ME64,Change in skin colour,Discoloration of skin,Blackish discoloration.
+AAB-28,kubjatvam,Hunchback (kEvalavAta),SP61,FA80,Kyphosis,Abnormal spine curvature,Kyphosis from Vata.
+AAB-29,kArSyam,"Sudden or gradual loss of weight, muscle (Vata)",SP61,5B80,Emaciation,Severe thinness,Emaciation from Vata.
+AAB-30,keSaBUmisPuTanam,Scaling of scalp/forehead skin (Vata),SN4C,ED52,Scaling of skin,"Dry, scaly skin on scalp",Scalp scaling.
